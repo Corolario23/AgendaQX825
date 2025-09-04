@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    esmExternals: 'loose'
-  },
   webpack: (config) => {
     config.resolve.fallback = {
       ...config.resolve.fallback,
@@ -13,6 +10,7 @@ const nextConfig = {
     return config;
   },
   transpilePackages: ['firebase'],
+  output: 'standalone'
 }
 
 module.exports = nextConfig
